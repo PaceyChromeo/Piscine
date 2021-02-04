@@ -12,7 +12,9 @@
 
 NAME	=	ft_display_file
 
-SRCS	=	./*.c
+SRCS	=	./ft_display_file.c
+
+HDRS	=	./display_file.h
 
 OBJS	=	${SRCS:.c=.o}
 
@@ -23,10 +25,10 @@ FLAGS	=	-Wall -Werror -Wextra
 RM		=	rm -f
 
 .c.o:
-	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+	${CC} ${FLAGS} -c $@ $< -o ${<:.c=.o} -I ${HDRS}
 
 ft_display_file:	${OBJS}
-	${CC} ${NAME} ${OBJS}
+				${CC} ${NAME} ${OBJS}
 
 all:	${NAME}
 
