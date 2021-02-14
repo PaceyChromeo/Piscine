@@ -15,7 +15,7 @@ void	ft_putstr(char *str)
 void	ft_display_file(char *str)
 {
 	int 	fd;
-	int	ret;
+	int		ret;
 	char	buf[BUF_SIZE + 1];
 
 	fd = open(str, O_RDONLY);
@@ -35,9 +35,9 @@ int main(int ac, char **av)
 	(void)ac;
 	if (ac < 2)
 		ft_putstr(NAME_MISS);
-	if (ac > 3)
+	if (ac > 2)
 		ft_putstr(MANY_ARG);
-	else
+	if (ac == 2)
 		ft_display_file(av[1]);
 	return (0);
 }

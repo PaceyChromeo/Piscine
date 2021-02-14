@@ -1,20 +1,20 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pjacob <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: pacey <pacey@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/03 08:38:11 by pjacob            #+#    #+#              #
-#    Updated: 2021/02/03 09:05:45 by pjacob           ###   ########.fr        #
+#    Updated: 2021/02/14 19:10:57 by pacey            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	ft_display_file
 
-SRCS	=	./ft_display_file.c
+SRCS	=	ft_display_file.c
 
-HDRS	=	./display_file.h
+HDRS	=	display_file.h
 
 OBJS	=	${SRCS:.c=.o}
 
@@ -25,10 +25,10 @@ FLAGS	=	-Wall -Werror -Wextra
 RM		=	rm -f
 
 .c.o:
-	${CC} ${FLAGS} -c $@ $< -o ${<:.c=.o} -I ${HDRS}
+	${CC} ${FLAGS} -o $@ -c $<
 
 ft_display_file:	${OBJS}
-				${CC} ${NAME} ${OBJS}
+				${CC} -o ${NAME} ${OBJS}
 
 all:	${NAME}
 
